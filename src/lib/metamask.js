@@ -1,3 +1,4 @@
+// do not call this in init script, because in that time, the metamask may not have injected ethereum object into enviroment
 export async function connect(that) {
     if (
         typeof window.ethereum !== "undefined" ||
