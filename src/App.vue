@@ -1,7 +1,7 @@
 <template>
   <div>1. install metamask and switch to Rinkeby network</div>
   <div>2. click button to connect wallet</div>
-  <div>3. click button to init contract</div>
+  <div>3. click button to init contract(after reload page, must do this step first)</div>
   <div>4. click button to PlaceOrder</div>
   <div>5. click button to AddDelivery</div>
   <div>6. click button to CompleteOrder</div>
@@ -30,20 +30,20 @@
   </ul>
   <button @click="derivativeInfo">derivative token detail</button>
   <ul>
-    <li v-for="(address, name, index) in derivativeDetial" :key="index">
-      {{ name }}:{{ address }}
+    <li v-for="(value, key, index) in derivativeDetial" :key="index">
+      {{ key }}:{{ value }}
     </li>
   </ul>
   <button @click="orderInfo">orderDetail</button>
   <ul>
-    <li v-for="(address, name, index) in orderDetail" :key="index">
-      {{ name }}:{{ address }}
+    <li v-for="(value, key, index) in orderDetail" :key="index">
+        {{ key }}:{{ key == "licenseId" ? value.toHexString() : value }}
     </li>
   </ul>
   <button @click="licenseInfo">licenseDetail</button>
   <ul>
-    <li v-for="(address, name, index) in licenseDetail" :key="index">
-      {{ name }}:{{ address }}
+    <li v-for="(value, key, index) in licenseDetail" :key="index">
+      {{ key }}:{{ value }}
     </li>
   </ul>
   <button @click="getAllIP">get IP list</button>
@@ -180,9 +180,11 @@ export default {
 
     async derivativeInfo() {
       const Derivative = AttachDerivative(this.derivativeContract);
+      const name = await Derivative.name();
       const owner = await Derivative.ownerOf(this.derivativeTokenId);
       const tokenURI = await Derivative.tokenURI(this.derivativeTokenId);
       this.derivativeDetial = {
+        name,
         derivativeContract: this.derivativeContract,
         tokenId: this.derivativeTokenId,
         owner,
