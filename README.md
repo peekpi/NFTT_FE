@@ -38,4 +38,4 @@ install metamask and create your wallet.
 1. in frontend project(this)
 2. copy `addresses.json`(step.5 above) to `src/lib/addresses.json`
 3. run `yarn serve`
-4. use browser access the frontend and switch network to `Localhost 8545`
+4. use browser access the frontend and switch metamask network to `Localhost 8545`
