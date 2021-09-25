@@ -1,4 +1,5 @@
 <template>
+  <div>To test with local EVM, see README</div>
   <div>1. install metamask and switch to Rinkeby network</div>
   <div>2. click button to connect wallet</div>
   <div>3. click button to init contract(after reload page, must do this step first)</div>
@@ -111,11 +112,11 @@ export default {
   methods: {
     async connectWallet() {
       const { chainId, accounts } = await connect();
-      this.chainId = chainId;
+      this.chainId = Number(chainId);
       this.accounts = accounts;
     },
     initContracts() {
-      contracts = InitContracts();
+      contracts = InitContracts(this.chainId);
       Object.keys(contracts).forEach((name) => {
         console.log(contracts[name].address);
         this.contracts[name] = contracts[name].address;
