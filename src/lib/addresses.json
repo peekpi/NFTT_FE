@@ -9,12 +9,12 @@
         "MockNFT": "0xcf3fb3942E6FCc94D7B5B4925A8884CE8CC6bE58"
     },
     "1337": {
-        "DerivativeFactory": "0x272a5E445Dd1FF565bbdd658902ba76c317C05b0",
-        "IPPool": "0xECD49E3330eE52df388D24e691f2c21d3C9a72CD",
-        "Licenser": "0x1a126626208E4cC4F6e11EB8F84Eeb711194D9e8",
+        "DerivativeFactory": "0x91C0Ea6f864264F15d1F49A6F6Dacc8c5c304a22",
+        "IPPool": "0xB471423B58Ff1594ecDa0233028c2FcD9e50b260",
+        "Licenser": "0xA08480e3EDbDb4C8eDC22e57195dD1EcC4b40dF5",
         "Derivatives": [
-            "0x5085F093B0c183BfC50143A8Ce3D6e7681Eed31F"
+            "0xAcADa2EF7A22eFC1148c0F1e48e059Ff55aE1d9b"
         ],
-        "MockNFT": "0x43e574e927423EE01618FdD18BdDA0E1029461eC"
+        "MockNFT": "0x5c1002Ee7763D7E20c4A1F846f1B86eAB9461515"
     }
 }

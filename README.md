@@ -34,8 +34,11 @@ install metamask and create your wallet.
 4. edit `deploy_ipp.js`, find `TesterAddress`, fill your wallet address
 5. in truffle console run `exec deploy_ipp.js`. this step will generate a `addresses.json`.
 
+> note: every time you restart local EVM(step3:`truffle develop`), you need to reset your Metamask account. `Settings`->`Advanced`=>`Reset Account`
+
 ## step2: develop frontend with local EVM
 1. in frontend project(this)
 2. copy `addresses.json`(step.5 above) to `src/lib/addresses.json`
 3. run `yarn serve`
 4. use browser access the frontend and switch metamask network to `Localhost 8545`
+
